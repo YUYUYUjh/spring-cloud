@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: rest-test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        group: dev_group #配置列表group
+        namespace: 7ce3add7-6291-4d17-9654-f07490b19566 #命名空间ID
+server:
+  port: 1234

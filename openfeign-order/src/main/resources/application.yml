@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        group: dev_group #配置列表group
+        namespace: 7ce3add7-6291-4d17-9654-f07490b19566 #命名空间ID
+  application:
+    name: order-center
+
+#指定FeignClientApi的日志级别
+server:
+  port: 10001
+
+#开日feign日志
+logging:
+  level:
+    com:  #api接口所在包
+      yy:
+        client:
+          api: debug
+#定义feign日志级别
+feign:
+  httpclient:
+    enabled: true
+    max-connections: 200 #最大连接数
+    max-connections-per-route: 50 #为每个url请求设置最大连接数
+  client:
+    config:
+      default:
+        connectTimeout: 3000
+        readTimeout: 3000
+      product-center:   #被调用api所在服务
+        loggerLevel: basic
+#        contract: feign.Contract.Default  #使用默认契约

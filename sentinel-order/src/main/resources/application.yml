@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        group: dev_group #配置列表group
+        namespace: 7ce3add7-6291-4d17-9654-f07490b19566 #命名空间ID
+#    sentinel:
+#      transport:
+#        dashboard: localhost:9999
+#        #namespace: bc7613d2-2e22-4292-a748-48b78170f14c  #指定namespace的id
+  application:
+    name: order-center
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+
+
+
+
